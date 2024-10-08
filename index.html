@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bonang-Chatbot</title>
     <link rel="stylesheet" href="style.css">
-    
+    <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
+
 </head>
 <body>
     <div class="video-background">
@@ -36,14 +37,24 @@
 
     <script type="module">
         import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js';
-      
         Typebot.initStandard({ typebot: "bonang-chatbot-s4iff2f" });
       </script>
 
-    <div class="w-full flex flex-row"></div>
+    <section id="chatbot" class="section">
+        <h2 class="section-title">Chatbot</h2>
+        <div class="w-full flex flex-row"></div>
         <typebot-standard class="justify-center items-center w-1/2"></typebot-standard>
-    </div>
+        </div>
+    </section>
 
-    
+    <section id ="3dmodel" class="section">
+        <h2 class="section-title">3D Model</h2>
+        <div class=""model-container">
+        <div class="sketchfab-embed-wrapper">
+            <iframe title="Traditional Instrument - Bonang" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/5f585e70c2a74be981b847d014ef1304/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/traditional-instrument-bonang-5f585e70c2a74be981b847d014ef1304?utm_medium=embed&utm_campaign=share-popup&utm_content=5f585e70c2a74be981b847d014ef1304" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Traditional Instrument - Bonang </a> by <a href="https://sketchfab.com/Assemblrworld86?utm_medium=embed&utm_campaign=share-popup&utm_content=5f585e70c2a74be981b847d014ef1304" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Assemblr </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=5f585e70c2a74be981b847d014ef1304" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+        </div>
+    </div>
+    </section>
+
 </body>
 </html>
