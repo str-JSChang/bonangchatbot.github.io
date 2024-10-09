@@ -2,20 +2,20 @@
 (function() {
     const bonangGame = (() => {
       const gongs = [
-        { id: 1, note: 'C', soundFile: 'gong1.mp3' },
-        { id: 2, note: 'D', soundFile: 'gong2.mp3' },
-        { id: 3, note: 'E', soundFile: 'gong3.mp3' },
-        { id: 4, note: 'F', soundFile: 'gong4.mp3' },
-        { id: 5, note: 'G', soundFile: 'gong5.mp3' },
-        { id: 6, note: 'A', soundFile: 'gong6.mp3' },
-        { id: 7, note: 'B', soundFile: 'gong7.mp3' },
-        { id: 8, note: 'C2', soundFile: 'gong8.mp3' },
-        { id: 9, note: 'D2', soundFile: 'gong9.mp3' },
-        { id: 10, note: 'E2', soundFile: 'gong10.mp3' },
-        { id: 11, note: 'F2', soundFile: 'gong11.mp3' },
-        { id: 12, note: 'G2', soundFile: 'gong12.mp3' },
-        { id: 13, note: 'A2', soundFile: 'gong13.mp3' },
-        { id: 14, note: 'B2', soundFile: 'gong14.mp3' }
+        { id: 1, note: 'C', soundFile: 'gong1.MP3' },
+        { id: 2, note: 'D', soundFile: 'gong2.MP3' },
+        { id: 3, note: 'E', soundFile: 'gong3.MP3' },
+        { id: 4, note: 'F', soundFile: 'gong4.MP3' },
+        { id: 5, note: 'G', soundFile: 'gong5.MP3' },
+        { id: 6, note: 'A', soundFile: 'gong6.MP3' },
+        { id: 7, note: 'B', soundFile: 'gong7.MP3' },
+        { id: 8, note: 'C2', soundFile: 'gong8.MP3' },
+        { id: 9, note: 'D2', soundFile: 'gong9.MP3' },
+        { id: 10, note: 'E2', soundFile: 'gong10.MP3' },
+        { id: 11, note: 'F2', soundFile: 'gong11.MP3' },
+        { id: 12, note: 'G2', soundFile: 'gong12.MP3' },
+        { id: 13, note: 'A2', soundFile: 'gong13.MP3' },
+        { id: 14, note: 'B2', soundFile: 'gong14.MP3' }
       ];
   
       function playSound(soundFile) {
