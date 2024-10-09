@@ -23,7 +23,7 @@
         <div class="menu">
             <a href="#chatbot">Chatbot</a>
             <a href="#3dmodel">3D Model</a>
-            <a href="#musicgame">Music Game</a>
+            <a href="#music-game">Music Game</a>
             <a href="#feedback">Feedback</a>
         </div>
     </div> 
@@ -35,10 +35,6 @@
         <p>Explore the features of the chatbot and more.</p>
     </div> -->
 
-    <script type="module">
-        import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js';
-        Typebot.initStandard({ typebot: "bonang-chatbot-s4iff2f" });
-      </script>
 
     <section id="chatbot" class="section">
         <h2 class="section-title">Chatbot</h2>
@@ -55,6 +51,19 @@
         </div>
     </div>
     </section>
+
+    <section id="music-game" class="section">
+        <h2 class="section-title">Bonang Music Game</h2>
+        <div id="bonang-game-container"></div>
+    </section>
+
+    <script src="bonang-game.js"></script>
+
+
+    <script type="module">
+        import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js';
+        Typebot.initStandard({ typebot: "bonang-chatbot-s4iff2f" });
+      </script>
 
 </body>
 </html>
