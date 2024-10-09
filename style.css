@@ -89,7 +89,7 @@ video {
 }
 
 typebot-standard {
-    padding-top: 64px;
+    overflow: visible;
 }
 
 
@@ -116,3 +116,50 @@ typebot-standard {
     overflow: auto;
 }
 
+#music-game {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#bonang-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.gong-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.upper-row {
+    margin-bottom: -30px; /* Adjust this value to overlap rows as needed */
+}
+
+
+.gong-button {
+    width: 80px;
+    height: 80px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.1s ease-in-out;
+}
+
+.gong-button:hover {
+    transform: scale(1.1);
+}
+
+.gong-button:active {
+    transform: scale(0.95);
+}
