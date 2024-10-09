@@ -21,29 +21,64 @@
     const audioCache = {};
 
     function preloadAudio() {
-      gongs.forEach(gong => {
-        const audio = new Audio(`sounds/${gong.soundFile}`);
-        audio.load();
-        audioCache[gong.soundFile] = audio;
+      console.log('Starting audio preload...');
+      return Promise.all(gongs.map(gong => {
+        return new Promise((resolve, reject) => {
+          const audio = new Audio(`sounds/${gong.soundFile}`);
+          audio.addEventListener('canplaythrough', () => {
+            audioCache[gong.soundFile] = audio;
+            console.log(`Loaded: ${gong.soundFile}`);
+            resolve();
+          }, { once: true });
+          audio.addEventListener('error', (e) => {
+            console.error(`Error loading ${gong.soundFile}:`, e);
+            reject(e);
+          });
+          audio.load();
+        });
+      })).then(() => {
+        console.log('All audio preloaded successfully');
+      }).catch(error => {
+        console.error('Error during audio preload:', error);
       });
     }
 
     function playSound(soundFile) {
+      console.log(`Attempting to play: ${soundFile}`);
       if (audioCache[soundFile]) {
-        audioCache[soundFile].currentTime = 0; // Reset to start
-        audioCache[soundFile].play().catch(error => console.error('Error playing sound:', error));
+        audioCache[soundFile].currentTime = 0;
+        audioCache[soundFile].play().then(() => {
+          console.log(`Playing ${soundFile}`);
+        }).catch(error => {
+          console.error(`Error playing ${soundFile}:`, error);
+          fallbackPlaySound(soundFile);
+        });
       } else {
-        console.error(`Audio file not loaded: ${soundFile}`);
+        console.warn(`Audio not in cache: ${soundFile}. Trying fallback.`);
+        fallbackPlaySound(soundFile);
       }
     }
 
+    function fallbackPlaySound(soundFile) {
+      const audio = new Audio(`sounds/${soundFile}`);
+      audio.play().then(() => {
+        console.log(`Fallback playing ${soundFile}`);
+      }).catch(error => {
+        console.error(`Fallback failed for ${soundFile}:`, error);
+      });
+    }
+
     function handleGongClick(gong) {
+      console.log(`Gong clicked: ${gong.note}`);
       playSound(gong.soundFile);
     }
 
     function createUI() {
       const gameContainer = document.getElementById('bonang-game-container');
-      if (!gameContainer) return; // Exit if the container doesn't exist yet
+      if (!gameContainer) {
+        console.error('Game container not found');
+        return;
+      }
 
       const upperRow = document.createElement('div');
       upperRow.className = 'gong-row upper-row';
@@ -66,16 +101,19 @@
 
       gameContainer.appendChild(upperRow);
       gameContainer.appendChild(lowerRow);
+      console.log('UI created successfully');
     }
 
     return {
       init: function() {
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM content loaded');
             createUI();
             preloadAudio();
           });
         } else {
+          console.log('DOM already loaded');
           createUI();
           preloadAudio();
         }
