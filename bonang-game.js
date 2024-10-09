@@ -19,7 +19,7 @@
       ];
   
       function playSound(soundFile) {
-        const audio = new Audio(`/str-JSChang.github.io/sounds/${soundFile}`);
+        const audio = new Audio(`./str-JSChang.github.io/sounds/${soundFile}`);
         audio.play().catch(error => console.error('Error playing sound:', error));
       }
   
