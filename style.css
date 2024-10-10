@@ -77,8 +77,20 @@ video {
     gap: 20px;
 }
 
+.chatbot-container {
+    width: 100%;
+    max-width: 1000px; /* Adjust this value as needed */
+    height: 700px; /* Adjust this value as needed */
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* This ensures the child element doesn't overflow */
+    margin: 20px auto; /* Centers the container and adds some vertical space */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
 .typebot-container {
     width: 100%;
+    height: 100%;
     justify-content:center;
     align-items:center;
 }
@@ -89,7 +101,7 @@ video {
 }
 
 typebot-standard {
-    overflow: visible;
+    overflow: auto;
 }
 
 
