@@ -19,6 +19,20 @@
     ];
 
     const audioCache = {};
+    let hitCount = 0;
+    
+    const popupImages = [
+      { src: 'images/popup1.png', },
+      { src: 'images/popup2.png', },
+      { src: 'images/popup3.png', },
+      { src: 'images/popup4.png', },
+      { src: 'images/popup5.png', },
+      { src: 'images/popup6.png', },
+      { src: 'images/popup7.png', },
+      { src: 'images/popup8.png', },
+      { src: 'images/popup9.png', },
+      { src: 'images/popup10.png', }
+    ];
 
     function preloadAudio() {
       console.log('Starting audio preload...');
@@ -71,6 +85,28 @@
     function handleGongClick(gong) {
       console.log(`Gong clicked: ${gong.note}`);
       playSound(gong.soundFile);
+      hitCount++;
+      if (hitCount === 10) {
+        showRandomPopup();
+        hitCount = 0;
+      }
+    }
+
+    function showRandomPopup() {
+      const popup = document.getElementById('popup');
+      const popupImage = document.getElementById('popupImage');
+      const popupText = document.getElementById('popupText');
+      
+      const randomPopup = popupImages[Math.floor(Math.random() * popupImages.length)];
+      
+      popupImage.src = randomPopup.src;
+      popupText.textContent = randomPopup.text;
+      
+      popup.style.display = 'block';
+      
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 3000); // Hide popup after 3 seconds
     }
 
     function createUI() {
@@ -78,6 +114,15 @@
       if (!gameContainer) {
         console.error('Game container not found');
         return;
+      }
+
+      function showRandomPopup() {
+        // ... other code ...
+        popup.classList.add('show');
+        
+        setTimeout(() => {
+          popup.classList.remove('show');
+        }, 3000);
       }
 
       const upperRow = document.createElement('div');
@@ -103,6 +148,16 @@
       gameContainer.appendChild(lowerRow);
       console.log('UI created successfully');
     }
+
+    const popup = document.createElement('div');
+    popup.id = 'popup';
+    popup.style.display = 'none';
+    popup.innerHTML = `
+      <img id="popupImage" src="" alt="Popup Image">
+      <p id="popupText"></p>
+    `;
+    document.body.appendChild(popup);
+    
 
     return {
       init: function() {
