@@ -163,3 +163,21 @@ typebot-standard {
 .gong-button:active {
     transform: scale(0.95);
 }
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 300px; /* Changed from right: 20px to left: 20px */
+    transform: translateY(-50%);
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+  }
+  
+  #popupImage {
+    max-width: 500px;
+    max-height: 500px;
+    display: block;
+    margin: 0 auto;
+  }
+  
