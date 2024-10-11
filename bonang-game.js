@@ -1,4 +1,3 @@
-// Bonang Game JavaScript
 (function() {
   const bonangGame = (() => {
     const gongs = [
@@ -106,7 +105,7 @@
       
       setTimeout(() => {
         popup.style.display = 'none';
-      }, 3000); // Hide popup after 3 seconds
+      }, 3000); 
     }
 
     function createUI() {
@@ -176,6 +175,5 @@
     };
   })();
 
-  // Initialize the game
   bonangGame.init();
 })();
