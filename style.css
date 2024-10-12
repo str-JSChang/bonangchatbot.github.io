@@ -168,6 +168,17 @@ typebot-standard {
     transition: transform 0.1s ease-in-out;
 }
 
+.gong-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, 100%);
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+  }
+
 .gong-button:hover {
     transform: scale(1.1);
 }
