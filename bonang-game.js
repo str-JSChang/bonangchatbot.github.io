@@ -107,7 +107,7 @@
       
       setTimeout(() => {
         popup.style.display = 'none';
-      }, 3000);
+      }, 3000); // Hide popup 
     }
 
     function createUI() {
