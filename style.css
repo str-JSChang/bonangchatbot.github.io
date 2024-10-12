@@ -157,6 +157,7 @@ typebot-standard {
 
 
 .gong-button {
+    position: relative;
     width: 80px;
     height: 80px;
     border: none;
